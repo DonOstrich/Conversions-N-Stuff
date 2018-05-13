@@ -417,8 +417,8 @@
                                     <outlet property="delegate" destination="A2W-jq-Tsc" id="a9J-lH-7cU"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Q-7C-4hm">
-                                <rect key="frame" x="50" y="128" width="220" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Q-7C-4hm">
+                                <rect key="frame" x="45" y="128" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.32017317194259542" green="0.045629058520197316" blue="0.43172122273350255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="4Vm-ab-S1K"/>
@@ -434,7 +434,7 @@
                             <constraint firstItem="q3c-nq-WCp" firstAttribute="leading" secondItem="M2O-3N-IkI" secondAttribute="leading" constant="15" id="5lb-Lb-uAm"/>
                             <constraint firstItem="KuL-fh-FGJ" firstAttribute="leading" secondItem="M2O-3N-IkI" secondAttribute="leading" constant="15" id="6GJ-is-7GU"/>
                             <constraint firstItem="q3c-nq-WCp" firstAttribute="top" secondItem="iYQ-PZ-bNx" secondAttribute="bottom" constant="35" id="A82-iD-qBb"/>
-                            <constraint firstItem="A3Q-7C-4hm" firstAttribute="leading" secondItem="M2O-3N-IkI" secondAttribute="leading" constant="50" id="HYb-bL-PdL"/>
+                            <constraint firstItem="A3Q-7C-4hm" firstAttribute="leading" secondItem="M2O-3N-IkI" secondAttribute="leading" constant="45" id="HYb-bL-PdL"/>
                             <constraint firstItem="rmk-j9-bpw" firstAttribute="height" secondItem="A3Q-7C-4hm" secondAttribute="height" id="Hvi-Oa-SRr"/>
                             <constraint firstItem="iYQ-PZ-bNx" firstAttribute="centerX" secondItem="zCb-bX-HZc" secondAttribute="centerX" id="KGe-8v-AqS"/>
                             <constraint firstItem="iYQ-PZ-bNx" firstAttribute="top" secondItem="A3Q-7C-4hm" secondAttribute="bottom" constant="66" id="KKG-Bo-VVT"/>
@@ -445,7 +445,7 @@
                             <constraint firstItem="cOo-sW-vib" firstAttribute="top" secondItem="M2O-3N-IkI" secondAttribute="top" constant="45" id="WpP-lO-PlF"/>
                             <constraint firstItem="M2O-3N-IkI" firstAttribute="trailing" secondItem="cOo-sW-vib" secondAttribute="trailing" constant="20" id="dgt-xb-VbQ"/>
                             <constraint firstItem="KuL-fh-FGJ" firstAttribute="bottom" secondItem="M2O-3N-IkI" secondAttribute="bottom" constant="-13" id="fTZ-OC-hED"/>
-                            <constraint firstItem="M2O-3N-IkI" firstAttribute="trailing" secondItem="A3Q-7C-4hm" secondAttribute="trailing" constant="50" id="g6Q-Rl-Fpg"/>
+                            <constraint firstItem="M2O-3N-IkI" firstAttribute="trailing" secondItem="A3Q-7C-4hm" secondAttribute="trailing" constant="45" id="g6Q-Rl-Fpg"/>
                             <constraint firstItem="M2O-3N-IkI" firstAttribute="trailing" secondItem="q3c-nq-WCp" secondAttribute="trailing" constant="15" id="mF8-PW-Hqi"/>
                             <constraint firstItem="iYQ-PZ-bNx" firstAttribute="centerY" secondItem="zCb-bX-HZc" secondAttribute="centerY" id="uiP-x0-B4c"/>
                             <constraint firstItem="cOo-sW-vib" firstAttribute="leading" secondItem="M2O-3N-IkI" secondAttribute="leading" constant="20" id="xdq-wu-7kf"/>
