@@ -330,6 +330,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="A2W-jq-Tsc" id="B5U-BB-C2w"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -417,7 +420,7 @@
                                     <outlet property="delegate" destination="A2W-jq-Tsc" id="a9J-lH-7cU"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Q-7C-4hm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Q-7C-4hm">
                                 <rect key="frame" x="45" y="128" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.32017317194259542" green="0.045629058520197316" blue="0.43172122273350255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -458,6 +461,7 @@
                         <outlet property="calculateBtn" destination="kjp-Fo-a4n" id="dmv-PL-KM7"/>
                         <outlet property="convertBtn" destination="Sh9-j9-Kg3" id="XU3-Do-WCX"/>
                         <outlet property="displayType" destination="A3Q-7C-4hm" id="D3o-ln-Xcf"/>
+                        <outlet property="inputField" destination="4Tn-oE-6DR" id="sII-23-dk0"/>
                         <outlet property="picker" destination="KuL-fh-FGJ" id="Chr-es-m2S"/>
                         <outlet property="resultField" destination="rmk-j9-bpw" id="uUN-w0-tek"/>
                     </connections>
