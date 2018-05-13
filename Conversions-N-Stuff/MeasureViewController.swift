@@ -8,14 +8,66 @@
 
 import UIKit
 
-class MeasureViewController: UIViewController {
+class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
+    
+    // All of the conversions allowed in the picker
+    var list = ["Inches To Feet", "Inches to Miles", "Inches To Centimeters", "Inches To Meters","Inches To Kilometers", "Feet To Inches", "Feet To Miles", "Feet To Centimeters", "Feet To Meters", "Feet To Kilometers", "Miles To Inches", "Miles To Feet", "Miles To Centimeters", "Miles To Meters", "Miles To Kilometers", "Centimeters To Inches", "Centimeters To Feet", "Centimeters To Miles", "Centimeters To Meters", "Centimeters To Kilometers", "Meters To Inches", "Meters To Feet", "Meters To Miles", "Meters To Centimeters", "Meters To Kilometers", "Kilometers To Inches", "Kilometers To Feet", "Kilometers To Miles", "Kilometers To Centimeters", "Kilometers To Meters"]
+    
+  
+    // user can only add one job at a time
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+        
+    }
+    
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        return list.count
+        
+    }
+    
+    // return the job the user has picked from the job list picker obj
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        self.view.endEditing(true)
+        return list[row]
+        
+    }
+    
+    //  save jobs in the appropriate fields
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        //self.taskTextbox.text = self.list[row]
+        //BeginingText = taskTextbox.text!
+        // once the user has picked their task close the menu..
+        self.picker.isHidden = true
+    }
+    
 
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var convertBtn: UIButton!
+    @IBOutlet weak var calculateBtn: UIButton!
+    @IBOutlet weak var resultField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.picker.isHidden = true
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func convertType(_ sender: UIButton) {
+        if sender == convertBtn{
+            self.picker.isHidden = false
+        }
+    }
+    
+    
+    @IBAction func calculate(_ sender: Any) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

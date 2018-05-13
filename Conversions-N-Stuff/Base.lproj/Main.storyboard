@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Coverter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mw-f5-wap">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mw-f5-wap">
                                 <rect key="frame" x="50" y="65" width="275" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.17325106779999999" green="1" blue="0.21285841150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,7 +53,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T82-pu-icx">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T82-pu-icx">
                                                 <rect key="frame" x="62.5" y="0.0" width="282.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -307,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement Convertor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOo-sW-vib">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOo-sW-vib">
                                 <rect key="frame" x="20" y="65" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.17325106779999999" green="1" blue="0.21285841150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -342,7 +342,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmk-j9-bpw">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmk-j9-bpw">
                                                 <rect key="frame" x="62.5" y="0.0" width="282.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -353,6 +353,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="rmk-j9-bpw" firstAttribute="height" secondItem="4Tn-oE-6DR" secondAttribute="height" id="37S-3v-tId"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="KrN-I2-zTV"/>
                                     <constraint firstItem="rmk-j9-bpw" firstAttribute="width" secondItem="4Tn-oE-6DR" secondAttribute="width" id="XxB-sH-9Bb"/>
                                     <constraint firstItem="gDU-FO-raF" firstAttribute="width" secondItem="dOk-Q0-TiF" secondAttribute="width" id="tqI-jQ-qUf"/>
                                     <constraint firstItem="gDU-FO-raF" firstAttribute="height" secondItem="dOk-Q0-TiF" secondAttribute="height" id="z4V-no-QZp"/>
@@ -364,7 +365,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-j9-Kg3">
                                         <rect key="frame" x="0.0" y="0.0" width="232" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="   Pick Coverter Type   ">
+                                        <state key="normal" title="   Pick Converter Type   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -372,6 +373,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="convertType:" destination="A2W-jq-Tsc" eventType="touchUpInside" id="Aqz-ey-cdU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjp-Fo-a4n">
                                         <rect key="frame" x="257" y="0.0" width="88" height="30"/>
@@ -385,6 +389,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="calculate:" destination="A2W-jq-Tsc" eventType="touchUpInside" id="Qnv-2z-2Qd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -395,6 +402,7 @@
                                     <constraint firstAttribute="height" constant="148" id="Dd9-Sg-1Lb"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="dataSource" destination="A2W-jq-Tsc" id="rMM-os-bb3"/>
                                     <outlet property="delegate" destination="A2W-jq-Tsc" id="a9J-lH-7cU"/>
                                 </connections>
                             </pickerView>
@@ -419,6 +427,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Ruler" id="vao-FI-C0D"/>
                     <navigationItem key="navigationItem" id="o7R-B7-4bX"/>
+                    <connections>
+                        <outlet property="calculateBtn" destination="kjp-Fo-a4n" id="dmv-PL-KM7"/>
+                        <outlet property="convertBtn" destination="Sh9-j9-Kg3" id="XU3-Do-WCX"/>
+                        <outlet property="picker" destination="KuL-fh-FGJ" id="Chr-es-m2S"/>
+                        <outlet property="resultField" destination="rmk-j9-bpw" id="uUN-w0-tek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgN-bh-E1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
