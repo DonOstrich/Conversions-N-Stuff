@@ -31,6 +31,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         self.view.endEditing(true)
+        //here
         return list[row]
         
     }
@@ -42,10 +43,12 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
         //self.taskTextbox.text = self.list[row]
         //BeginingText = taskTextbox.text!
         // once the user has picked their task close the menu..
+        self.displayType.text = list[row]
         self.picker.isHidden = true
     }
     
 
+    @IBOutlet weak var displayType: UILabel!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var convertBtn: UIButton!
     @IBOutlet weak var calculateBtn: UIButton!
@@ -54,12 +57,14 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.isHidden = true
+        self.displayType.isHidden = true
         // Do any additional setup after loading the view.
     }
 
     @IBAction func convertType(_ sender: UIButton) {
         if sender == convertBtn{
             self.picker.isHidden = false
+            self.displayType.isHidden = false
         }
     }
     
