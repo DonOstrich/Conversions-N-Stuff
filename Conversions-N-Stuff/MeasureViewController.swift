@@ -21,7 +21,7 @@ class UnitsConv {
 }
 
 extension Double {
-    
+    // round converions numbers by the places given
     func round(number: Double, to places: Int)->String{
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -43,12 +43,14 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var units = [UnitsConv]()
     var UnitPickedConv = ""
     
-    @IBOutlet weak var displayType: UILabel!
+    //@IBOutlet weak var displayType: UILabel!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var convertBtn: UIButton!
     @IBOutlet weak var calculateBtn: UIButton!
     @IBOutlet weak var resultField: UITextField!
     @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var header: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +72,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
         
         self.inputField.delegate = self
         self.picker.isHidden = true
-        self.displayType.isHidden = true
+        //self.displayType.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -124,7 +126,8 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let ConvUnit = units[selectedUnit].convertUnit[selectedConversionUnit]
         
         UnitPickedConv = "\(givenUnit) to \(ConvUnit)"
-        self.displayType.text = UnitPickedConv
+        //self.displayType.text = UnitPickedConv
+        self.header.text = UnitPickedConv
         print(UnitPickedConv)
     }
     
@@ -132,7 +135,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func convertType(_ sender: UIButton) {
         if sender == convertBtn{
             self.picker.isHidden = false
-            self.displayType.isHidden = false
+            //self.displayType.isHidden = false
         }
     }
     
@@ -142,7 +145,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
         var x = 0.0
         if sender == calculateBtn{
             self.picker.isHidden = true
-            self.displayType.isHidden = false
+            //self.displayType.isHidden = false
         }
         
         // dont allow nothing to be inputed
@@ -152,7 +155,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
             alert.addAction(cancel)
             present(alert, animated: true, completion: nil)
             
-            //print("check complete")
+        // do the conversion calculations for the user and display it on the screen
         } else {
             let hold = UnitPickedConv
             switch hold {
