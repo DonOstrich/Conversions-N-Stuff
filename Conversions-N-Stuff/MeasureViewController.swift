@@ -22,26 +22,6 @@ class UnitsConv {
 
 extension Double {
     
-     /*
-     float bmi = bbmi * 10;
-     bmi = (int)(bmi + 0.5);
-     bmi = (float) bmi;
-     bmi = bmi / 10;
-     */
-    /*
-    more accurate for decimals
-    func round(to places: Int) -> Float {
-        let divisor = pow(10.0, Float(places))
-        return Float(Darwin.round(Float(self) * divisor) / divisor)
-    }
-  */
-    
-    /*
-    func round(to places: Int) -> Double {
-        let divisor = pow(10000.0, Double(places))
-        return Darwin.round(self * divisor) / divisor
-    }
- */
     func round(number: Double, to places: Int)->String{
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -63,7 +43,12 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var units = [UnitsConv]()
     var UnitPickedConv = ""
     
-    
+    @IBOutlet weak var displayType: UILabel!
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var convertBtn: UIButton!
+    @IBOutlet weak var calculateBtn: UIButton!
+    @IBOutlet weak var resultField: UITextField!
+    @IBOutlet weak var inputField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,15 +128,6 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
         print(UnitPickedConv)
     }
     
-    
-    @IBOutlet weak var displayType: UILabel!
-    @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var convertBtn: UIButton!
-    @IBOutlet weak var calculateBtn: UIButton!
-    @IBOutlet weak var resultField: UITextField!
-    @IBOutlet weak var inputField: UITextField!
-    
-    
     // user can pick units and conversion units from the pick. This button pulls up the picker
     @IBAction func convertType(_ sender: UIButton) {
         if sender == convertBtn{
@@ -212,7 +188,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
                 
             case "Centimeter to Kilometer": x = Double(inputField.text!)!
                                             x =  x / 100000
-                                            resultField.text = String(x.round(number: x, to: 8)) + " Kilmoeter(s)"
+                                            resultField.text = String(x.round(number: x, to: 8)) + " Km(s)"
                 
             case "Centimeter to Inches": x = Double(inputField.text!)!
                                          x =  x / 2.54
@@ -256,19 +232,113 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
             case "Feet to Kilometer":   x = Double(inputField.text!)!
                                         x =  x *  0.0003048
                                         resultField.text = String(x.round(number: x, to: 8)) + " Km(s)"
+             
+            //===================== Meters to converted units V================================//
+            case "Meter to Centimeter": x = Double(inputField.text!)!
+                                        x =  x * 100
+                                        resultField.text = String(x.round(number: x, to: 6)) + " cm(s)"
                 
-            default: print("Another state...")
+            case "Meter to Kilometer":  x = Double(inputField.text!)!
+                                        x =  x / 1000
+                                        resultField.text = String(x.round(number: x, to: 8)) + " Km(s)"
+                
+            case "Meter to Inches": x = Double(inputField.text!)!
+                                    x =  x / 0.0254
+                                    resultField.text = String(x.round(number: x, to: 4)) + " Inches"
+                
+            case "Meter to Feet":   x = Double(inputField.text!)!
+                                    x =  x / 0.3048
+                                    resultField.text = String(x.round(number: x, to: 4)) + " Feet"
+                
+            case "Meter to Yard":   x = Double(inputField.text!)!
+                                    x =  x / 0.9144
+                                    resultField.text = String(x.round(number: x, to: 4)) + " Yard(s)"
+                
+            case "Meter to Mile":   x = Double(inputField.text!)!
+                                    x =  x / 1609.344
+                                    resultField.text = String(x.round(number: x, to: 7)) + " Mile(s)"
+                
+            //===================== Yards to converted units V================================//
+            case "Yard to Inches":  x = Double(inputField.text!)!
+                                    x =  x * 36
+                                    resultField.text = String(x.round(number: x, to: 3)) + " Inches"
+                
+            case "Yard to Feet":    x = Double(inputField.text!)!
+                                    x =  x * 3
+                                    resultField.text = String(x.round(number: x, to: 4)) + " Feet"
+                
+            case "Yard to Mile":    x = Double(inputField.text!)!
+                                    x =  x / 1760
+                                    resultField.text = String(x.round(number: x, to: 7)) + " Mile(s)"
+                
+            case "Yard to Centimeter":  x = Double(inputField.text!)!
+                                        x =  x * 91.44
+                                        resultField.text = String(x.round(number: x, to: 4)) + " cm(s)"
+                
+            case "Yard to Meter":   x = Double(inputField.text!)!
+                                    x =  x * 0.9144
+                                    resultField.text = String(x.round(number: x, to: 6)) + " Meter(s)"
+                
+            case "Yard to Kilometer":   x = Double(inputField.text!)!
+                                        x =  x * 0.0009144
+                                        resultField.text = String(x.round(number: x, to: 8)) + " Km(s)"
+            
+            //===================== Miles to converted units V================================//
+            case "Mile to Inches":  x = Double(inputField.text!)!
+                                    x =  x * 63360
+                                    resultField.text = String(x.round(number: x, to: 3)) + " Inches"
+                
+            case "Mile to Feet":    x = Double(inputField.text!)!
+                                    x =  x * 5280
+                                    resultField.text = String(x.round(number: x, to: 4)) + " Feet"
+                
+            case "Mile to Yard":    x = Double(inputField.text!)!
+                                    x =  x * 1760
+                                    resultField.text = String(x.round(number: x, to: 7)) + " Yard(s)"
+                
+            case "Mile to Centimeter":  x = Double(inputField.text!)!
+                                        x =  x * 160934.4
+                                        resultField.text = String(x.round(number: x, to: 4)) + " cm(s)"
+                
+            case "Mile to Meter":   x = Double(inputField.text!)!
+                                    x =  x * 1609.344
+                                    resultField.text = String(x.round(number: x, to: 6)) + " Meter(s)"
+                
+            case "Mile to Kilometer":   x = Double(inputField.text!)!
+                                        x =  x * 1.609344
+                                        resultField.text = String(x.round(number: x, to: 8)) + " Km(s)"
+            
+            //===================== Kilometers to converted units V================================//
+            case "Kilometer to Centimeter": x = Double(inputField.text!)!
+                                             x =  x * 100000
+                                             resultField.text = String(x.round(number: x, to: 6)) + " Centimeter(s)"
+                
+            case "Kilometer to Meter":     x = Double(inputField.text!)!
+                                            x =  x * 1000
+                                            resultField.text = String(x.round(number: x, to: 8)) + " Meter(s)"
+                
+            case "Kilometer to Inches": x = Double(inputField.text!)!
+                                         x =  x / 0.0000254
+                                         resultField.text = String(x.round(number: x, to: 4)) + " Inches"
+                
+            case "Kilometer to Feet":   x = Double(inputField.text!)!
+                                         x =  x / 0.0003048
+                                         resultField.text = String(x.round(number: x, to: 4)) + " Feet"
+                
+            case "Kilometer to Yard":   x = Double(inputField.text!)!
+                                         x =  x / 0.0009144
+                                         resultField.text = String(x.round(number: x, to: 4)) + " Yard(s)"
+                
+            case "Kilometer to Mile":   x = Double(inputField.text!)!
+                                         x =  x / 1.609344
+                                         resultField.text = String(x.round(number: x, to: 7)) + " Mile(s)"
+                
+            default: print("Another state (not conversion type)...")
             }
             
         }
     }
     
-
-    
-    func fromInches(incomeVal: String)->String{
-        
-        return "hi"
-    }
     
     // this will ensure that the user has to use numbers and 1 decimal point
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
