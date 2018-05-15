@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mw-f5-wap">
-                                <rect key="frame" x="50" y="109" width="220" height="36"/>
+                                <rect key="frame" x="50" y="65" width="220" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.17325106779999999" green="1" blue="0.21285841150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -260,7 +260,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAccess:" destination="5Gq-Su-wx3" eventType="touchUpInside" id="Lgy-XB-chg"/>
-                                    <segue destination="yDK-TV-eLl" kind="show" id="eB8-Kg-eYe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -278,6 +277,8 @@
                     <connections>
                         <outlet property="loginBtn" destination="bGR-JW-ouX" id="RtX-B6-J8c"/>
                         <outlet property="titleLabel" destination="Gah-t8-nay" id="EvL-pe-AUy"/>
+                        <segue destination="PNi-aQ-LeI" kind="show" identifier="touchID" id="aXG-XA-h6y"/>
+                        <segue destination="yDK-TV-eLl" kind="show" identifier="noTouch" id="ab2-40-lF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-yI-MSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +364,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="login:" destination="yDK-TV-eLl" eventType="touchUpInside" id="ZJ2-Qx-CIW"/>
+                                                    <segue destination="PNi-aQ-LeI" kind="show" identifier="accessed" id="OX1-of-d5e"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -383,14 +385,28 @@
                                 <color key="textColor" red="0.17325106779999999" green="1" blue="0.21285841150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reg-p2-XsN">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ncz-Aj-nnQ"/>
+                                </constraints>
+                                <state key="normal" image="Home"/>
+                                <connections>
+                                    <segue destination="HVs-dD-S9I" kind="show" id="xSL-dX-Khr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CbU-YZ-3Z2" firstAttribute="leading" secondItem="rPk-hB-rgC" secondAttribute="leading" constant="15" id="7Ci-co-yv7"/>
+                            <constraint firstItem="reg-p2-XsN" firstAttribute="leading" secondItem="rPk-hB-rgC" secondAttribute="leading" id="9Fq-sb-iG8"/>
                             <constraint firstItem="rPk-hB-rgC" firstAttribute="trailing" secondItem="gjb-7Q-qwb" secondAttribute="trailing" constant="15" id="Amg-ik-aeO"/>
                             <constraint firstItem="gjb-7Q-qwb" firstAttribute="top" secondItem="rPk-hB-rgC" secondAttribute="top" constant="10" id="C0S-Ws-Aoi"/>
+                            <constraint firstItem="rPk-hB-rgC" firstAttribute="trailing" secondItem="reg-p2-XsN" secondAttribute="trailing" id="Fb6-qP-e3X"/>
                             <constraint firstItem="CbU-YZ-3Z2" firstAttribute="centerX" secondItem="L66-jf-jdg" secondAttribute="centerX" id="Nrv-sv-2Ie"/>
                             <constraint firstItem="gjb-7Q-qwb" firstAttribute="leading" secondItem="rPk-hB-rgC" secondAttribute="leading" constant="15" id="SXB-Xn-yzu"/>
+                            <constraint firstItem="reg-p2-XsN" firstAttribute="bottom" secondItem="L66-jf-jdg" secondAttribute="bottom" id="Wco-jT-o06"/>
                             <constraint firstItem="CbU-YZ-3Z2" firstAttribute="centerY" secondItem="L66-jf-jdg" secondAttribute="centerY" id="c7B-DD-Dk5"/>
                             <constraint firstItem="rPk-hB-rgC" firstAttribute="trailing" secondItem="CbU-YZ-3Z2" secondAttribute="trailing" constant="15" id="gO1-f7-AGQ"/>
                         </constraints>
@@ -407,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNT-Hn-K4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2394.375" y="459.50704225352115"/>
+            <point key="canvasLocation" x="2394.375" y="748.94366197183103"/>
         </scene>
         <!--Password Holder View Controller-->
         <scene sceneID="Hsf-xc-h7W">
@@ -436,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0E-Fa-auU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="-254"/>
+            <point key="canvasLocation" x="4333" y="-23"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VR0-BH-R8M">
@@ -484,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOo-sW-vib">
-                                <rect key="frame" x="20" y="109" width="280" height="31.5"/>
+                                <rect key="frame" x="20" y="65" width="280" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.17325106779999999" green="1" blue="0.21285841150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -640,8 +656,10 @@
         <image name="Time" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rSu-cJ-ZOa"/>
+        <segue reference="kcW-1I-xI6"/>
+        <segue reference="OX1-of-d5e"/>
         <segue reference="FF7-gv-Jcy"/>
-        <segue reference="rfn-JI-b0o"/>
+        <segue reference="xSL-dX-Khr"/>
+        <segue reference="PE1-p6-jAF"/>
     </inferredMetricsTieBreakers>
 </document>

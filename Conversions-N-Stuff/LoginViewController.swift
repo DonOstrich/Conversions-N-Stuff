@@ -22,17 +22,24 @@ class LoginViewController: UIViewController {
             contex.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Need Figure Print To Sign In", reply: { (wasSuccessful, error) in
                 if wasSuccessful {
                     print("Granted access")
+                    self.performSegue(withIdentifier: "touchID", sender: self.navigationController)
                     // segue here
                     //DispatchQueue.async(group: DispatchQueue.main, execute: {
                         // UI stuff here
                    // })
                 }else{
+                    let alert = UIAlertController(title: "Error: Print Not Identified", message: "Please Try Again ", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(cancel)
+                    self.present(alert, animated: true, completion: nil)
                     print("No Access, failed print")
                 }
             })
         }else{
             print("Phone does not supoort TouchId")
             // UI code here -> Normal login screen
+            self.performSegue(withIdentifier: "noTouch", sender: self.navigationController)
+
         }
     }
     
