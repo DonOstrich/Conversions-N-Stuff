@@ -13,6 +13,9 @@
 		C16B5B6A20A7F0A90098603E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16B5B6920A7F0A90098603E /* Assets.xcassets */; };
 		C16B5B6D20A7F0A90098603E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16B5B6B20A7F0A90098603E /* LaunchScreen.storyboard */; };
 		C16B5B7720A8245E0098603E /* MeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16B5B7620A8245E0098603E /* MeasureViewController.swift */; };
+		C1712C6C20AA3FCC00B5298B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1712C6B20AA3FCC00B5298B /* LoginViewController.swift */; };
+		C1B6964420AA4CED0070B056 /* PinLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6964320AA4CED0070B056 /* PinLoginViewController.swift */; };
+		C1B6964620AA5E1C0070B056 /* passwordHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B6964520AA5E1C0070B056 /* passwordHolderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C16B5B6C20A7F0A90098603E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C16B5B6E20A7F0A90098603E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C16B5B7620A8245E0098603E /* MeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureViewController.swift; sourceTree = "<group>"; };
+		C1712C6B20AA3FCC00B5298B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1B6964320AA4CED0070B056 /* PinLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLoginViewController.swift; sourceTree = "<group>"; };
+		C1B6964520AA5E1C0070B056 /* passwordHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordHolderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				C16B5B6220A7F0A90098603E /* AppDelegate.swift */,
+				C1712C6B20AA3FCC00B5298B /* LoginViewController.swift */,
+				C1B6964520AA5E1C0070B056 /* passwordHolderViewController.swift */,
+				C1B6964320AA4CED0070B056 /* PinLoginViewController.swift */,
 				C16B5B7620A8245E0098603E /* MeasureViewController.swift */,
 				C16B5B6420A7F0A90098603E /* ViewController.swift */,
 				C16B5B6620A7F0A90098603E /* Main.storyboard */,
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1712C6C20AA3FCC00B5298B /* LoginViewController.swift in Sources */,
 				C16B5B7720A8245E0098603E /* MeasureViewController.swift in Sources */,
 				C16B5B6520A7F0A90098603E /* ViewController.swift in Sources */,
+				C1B6964620AA5E1C0070B056 /* passwordHolderViewController.swift in Sources */,
+				C1B6964420AA4CED0070B056 /* PinLoginViewController.swift in Sources */,
 				C16B5B6320A7F0A90098603E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
