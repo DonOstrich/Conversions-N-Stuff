@@ -393,7 +393,7 @@
                                 </constraints>
                                 <state key="normal" image="Home"/>
                                 <connections>
-                                    <segue destination="HVs-dD-S9I" kind="show" id="xSL-dX-Khr"/>
+                                    <segue destination="Kls-ni-35l" kind="show" id="bot-Dn-a3e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -659,7 +659,6 @@
         <segue reference="kcW-1I-xI6"/>
         <segue reference="OX1-of-d5e"/>
         <segue reference="FF7-gv-Jcy"/>
-        <segue reference="xSL-dX-Khr"/>
         <segue reference="PE1-p6-jAF"/>
     </inferredMetricsTieBreakers>
 </document>
