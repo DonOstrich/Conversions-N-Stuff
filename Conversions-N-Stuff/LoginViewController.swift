@@ -15,7 +15,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginBtn: UIButton!
     
-
+    @IBOutlet weak var pinBtn: UIButton!
+    
     @IBAction func loginAccess(_ sender: Any) {
         let contex = LAContext()
         if contex.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil){
@@ -33,6 +34,8 @@ class LoginViewController: UIViewController {
                     alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)
                     print("No Access, failed print")
+                    
+                    self.pinBtn.isHidden = false
                 }
             })
         }else{
@@ -43,10 +46,13 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func pinLoginBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "noTouch", sender: self.navigationController)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        pinBtn.isHidden = true
         // Do any additional setup after loading the view.
     }
     
