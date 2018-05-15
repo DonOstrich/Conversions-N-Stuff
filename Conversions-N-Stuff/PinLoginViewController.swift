@@ -73,10 +73,12 @@ class PinLoginViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(cancel)
                 present(alert, animated: true, completion: nil)
             }
+                // the user gave the right password grant them access
             else{
             //segue to longin screen here
             print("access granted you may enter")
             print("Pin: ", temp! )
+            hasPinField.text = ""
                 //let vc = passwordHolderViewController()
                 //present(vc, animated: true, completion: nil)
                 //performSegue(withIdentifier: "accessed", sender: self.navigationController)

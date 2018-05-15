@@ -26,6 +26,13 @@ class AddViewController: UIViewController {
             field.placeholder = "Add More ?"
             showToast(message: "Password Added")
         }
+        else{
+            let alert = UIAlertController(title: "Error: Fields Not Filled out", message: "Please enter an account and a password", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+            print("No Access, failed print")
+        }
     }
     
     func showToast(message : String) {
