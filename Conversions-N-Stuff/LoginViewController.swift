@@ -23,25 +23,29 @@ class LoginViewController: UIViewController {
             contex.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Need Figure Print To Sign In", reply: { (wasSuccessful, error) in
                 if wasSuccessful {
                     print("Granted access")
+                    DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "touchID", sender: self.navigationController)
+                    }
                     // segue here
                     //DispatchQueue.async(group: DispatchQueue.main, execute: {
                         // UI stuff here
                    // })
                 }else{
-                    let alert = UIAlertController(title: "Error: Print Not Identified", message: "Please Try Again ", preferredStyle: .alert)
-                    let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(cancel)
-                    self.present(alert, animated: true, completion: nil)
+                    
                     print("No Access, failed print")
                     
+                    DispatchQueue.main.async {
                     self.pinBtn.isHidden = false
+                    }
+                   
                 }
             })
         }else{
             print("Phone does not supoort TouchId")
             // UI code here -> Normal login screen
+            DispatchQueue.main.async {
             self.performSegue(withIdentifier: "noTouch", sender: self.navigationController)
+            }
 
         }
     }
@@ -52,7 +56,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pinBtn.isHidden = true
+        
+        // This adds a gesture recognizer in order for the user to close the keyboard by tapping anywhere on the screen
+        // other than the keyboard itself
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
         // Do any additional setup after loading the view.
     }
     

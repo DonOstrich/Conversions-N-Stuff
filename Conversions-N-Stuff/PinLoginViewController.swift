@@ -48,6 +48,7 @@ class PinLoginViewController: UIViewController, UITextFieldDelegate {
     
     // user already has a pin number
     @IBAction func login(_ sender: Any) {
+        self.view.endEditing(true)
         let temp = defaults.string(forKey: "pin")
         // dont accept a null pin
         if(hasPinField.text?.isEmpty == true || temp == nil) {
@@ -89,6 +90,9 @@ class PinLoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // dismiss keyboard
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
         let temp = defaults.string(forKey: "pin")
         if temp == nil{
             //hasPinField.isHidden = true

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kls-ni-35l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kls-ni-35l">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -304,12 +304,12 @@
                         <outlet property="pinBtn" destination="C6J-rK-D8j" id="k3O-2W-Atn"/>
                         <outlet property="titleLabel" destination="Gah-t8-nay" id="EvL-pe-AUy"/>
                         <segue destination="yDK-TV-eLl" kind="show" identifier="noTouch" id="ab2-40-lF7"/>
-                        <segue destination="PNi-aQ-LeI" kind="show" identifier="touchID" id="OJM-sh-yCf"/>
+                        <segue destination="PNi-aQ-LeI" kind="show" identifier="touchID" id="d76-Mb-amA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-yI-MSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="-255"/>
+            <point key="canvasLocation" x="2394.375" y="-255.63380281690141"/>
         </scene>
         <!--Pin Login View Controller-->
         <scene sceneID="NeB-iy-QI3">
@@ -400,7 +400,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="login:" destination="yDK-TV-eLl" eventType="touchUpInside" id="ZJ2-Qx-CIW"/>
-                                                    <segue destination="PNi-aQ-LeI" kind="show" identifier="accessed" id="oAz-Uh-urG"/>
+                                                    <segue destination="PNi-aQ-LeI" kind="show" identifier="accessed" id="6zr-Jh-qq3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -831,7 +831,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="kcW-1I-xI6"/>
         <segue reference="bot-Dn-a3e"/>
-        <segue reference="OJM-sh-yCf"/>
+        <segue reference="d76-Mb-amA"/>
         <segue reference="FF7-gv-Jcy"/>
         <segue reference="PE1-p6-jAF"/>
     </inferredMetricsTieBreakers>

@@ -55,6 +55,10 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // This adds a gesture recognizer in order for the user to close the keyboard by tapping anywhere on the screen
+        // other than the keyboard itself
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
         // setting up all the arrays for all possible conversions between units. Will show in Picker
         units.append(UnitsConv(startUnit: "Inches", convertUnit: ["Feet", "Yard", "Mile", "Centimeter", "Meter", "Kilometer"]))
         
@@ -133,6 +137,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     // user can pick units and conversion units from the pick. This button pulls up the picker
     @IBAction func convertType(_ sender: UIButton) {
+        self.view.endEditing(true)
         if sender == convertBtn{
             self.picker.isHidden = false
             //self.displayType.isHidden = false
@@ -142,6 +147,7 @@ class MeasureViewController: UIViewController, UITextFieldDelegate, UIPickerView
     // Once the user has clicked this button there units will be calculated and displayed on the
     // textfield. The input textfield must input else throw and alert and don't do the calculation
     @IBAction func calculate(_ sender: UIButton) {
+        self.view.endEditing(true)
         var x = 0.0
         if sender == calculateBtn{
             self.picker.isHidden = true
