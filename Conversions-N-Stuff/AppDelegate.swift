@@ -18,12 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let atodo = fetchData1(){
-            account = atodo
-        }
-        else{
-            account = [String]()
-        }
         
         if let todo = fetchData(){
             todoList = todo
@@ -31,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
             todoList = [String]()
         }
+        
+        if let atodo = fetchData1(){
+            account = atodo
+        }
+        else{
+            account = [String]()
+        }
+        
+
         
         return true
     }

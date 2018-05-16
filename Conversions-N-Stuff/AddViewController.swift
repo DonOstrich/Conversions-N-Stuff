@@ -14,6 +14,22 @@ class AddViewController: UIViewController {
     @IBOutlet weak var accountField: UITextField!
     @IBOutlet weak var field: UITextField!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.isNavigationBarHidden = false
+        //tableView.reloadData()
+        
+    }
+    
+    
     @IBAction func add(_ sender: Any) {
         
         if (field.text != nil) && field.text != "" && (accountField.text != nil) && accountField.text != ""{
@@ -56,7 +72,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
 
